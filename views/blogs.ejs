@@ -180,35 +180,18 @@
 
     <!-- Cards Container -->
     <div class="card-container">
-        <!-- Card 1 -->
-        <div class="card">
-            <div class="card-title">Cutting-Edge Technology</div>
-            <div class="card-subtitle">Leading the industry</div>
-            <div class="card-description">
-                Stay ahead with our state-of-the-art technology solutions designed to enhance productivity and
-                efficiency.
+        <!-- Loop through each blog and create a card -->
+        <% blogs.forEach((blog) => { %> 
+            <div class="card">
+                <div class="card-title"><%= blog.title %></div>
+                <div class="card-subtitle"><%= blog.subtitle %></div>
+                <div class="card-description">
+                    <%= blog.description %>
+                </div>
             </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card">
-            <div class="card-title">Expert Team</div>
-            <div class="card-subtitle">Experience that matters</div>
-            <div class="card-description">
-                Our team of seasoned professionals brings deep expertise and a commitment to delivering top-quality
-                results.
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card">
-            <div class="card-title">Customer Focus</div>
-            <div class="card-subtitle">Your success is our mission</div>
-            <div class="card-description">
-                We prioritize understanding your needs and delivering solutions that drive your success.
-            </div>
-        </div>
+        <% }) %>
     </div>
+    
 
     <!-- Footer -->
     <div class="footer">

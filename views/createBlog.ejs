@@ -148,25 +148,25 @@
     <!-- Form Container -->
     <div class="container">
         <div class="page-title">Submit Your Information</div>
-        <div class="page-subtitle">We'd love to hear from you</div>
+        <div class="page-subtitle">We'd Love to Hear from You</div>
         <div class="page-description">
             Please fill out the form below and we will get in touch with you as soon as possible.
         </div>
 
-        <form action="/addBlog" method= "post">
+        <form action="/api/createBlog" method="post">
             <div class="form-group">
-                <label for="title">title</label>
+                <label for="title">Title</label>
                 <input type="text" id="title" name="title" placeholder="Title" required>
             </div>
 
             <div class="form-group">
                 <label for="subtitle">Subtitle</label>
-                <input type="text" id="subtitle" name="subtitle" placeholder="subtitle" required>
+                <input type="text" id="subtitle" name="subtitle" placeholder="Subtitle" required>
             </div>
 
             <div class="form-group">
-                <label for="description">description</label>
-                <textarea id="description" name="description" placeholder="description" required></textarea>
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Description" required></textarea>
             </div>
 
             <div class="form-group">
