@@ -153,24 +153,27 @@
             Please fill out the form below and we will get in touch with you as soon as possible.
         </div>
 
-        <form action="/api/createBlog" method="post">
+        <form action="/api/update/<%= single.id %>" method="post">
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" id="title" name="title" placeholder="Title" required>
+                <input type="text" value="<%= single.title %>" id="title" name="title" placeholder="Title" required>
             </div>
 
             <div class="form-group">
                 <label for="subtitle">Subtitle</label>
-                <input type="text" id="subtitle" name="subtitle" placeholder="Subtitle" required>
+                <input type="text" value="<%= single.subtitle %>" id="subtitle" name="subtitle" placeholder="Subtitle" required>
             </div>
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea id="description" name="description" placeholder="Description" required></textarea>
+                <textarea id="description" name="description"  placeholder="Description" required>
+                    <%= single.description %>
+                </textarea>
             </div>
 
             <div class="form-group">
                 <button type="submit">Submit</button>
+                <button><a href="/api/singlePage/<%= single.id %>">Cancel</a></button>
             </div>
         </form>
     </div>

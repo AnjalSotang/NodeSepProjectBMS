@@ -138,6 +138,18 @@
         .card-description {
             font-size: 16px;
             color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            color: #2980b9;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .read-more:hover {
+            color: #1f6395;
         }
 
         /* Footer Styling */
@@ -163,7 +175,7 @@
             <a href="#home">Your Logo</a>
         </div>
         <div class="navbar-items">
-            <a href="/createBlog">Add Blog</a>
+            <a href="/api/createPage">Add Blog</a>
         </div>
         <div class="navbar-search">
             <input type="text" placeholder="Search...">
@@ -181,17 +193,22 @@
     <!-- Cards Container -->
     <div class="card-container">
         <!-- Loop through each blog and create a card -->
-        <% blogs.forEach((blog) => { %> 
+        <% blogs.forEach((blog)=> { %>
             <div class="card">
-                <div class="card-title"><%= blog.title %></div>
-                <div class="card-subtitle"><%= blog.subtitle %></div>
-                <div class="card-description">
-                    <%= blog.description %>
+                <div class="card-title">
+                    <%= blog.title %>
                 </div>
+                <div class="card-subtitle">
+                    <%= blog.subtitle %>
+                </div>
+                <div class="card-description">
+                    <%= blog.description.substring(0, 100) %>...
+                </div>                
+                <a href="/api/singlePage/<%= blog.id %>" class="read-more">Read More</a>
             </div>
-        <% }) %>
+            <% }) %>
     </div>
-    
+
 
     <!-- Footer -->
     <div class="footer">
