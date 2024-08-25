@@ -7,6 +7,11 @@ sequelize.sync({ force: 0 });
 
 app.set('view engine', 'ejs');
 
+//nODEJS KAI CSS ALLOW GAR
+// Serve static files from the 'public' directory
+app.use(express.static("public"));
+
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 

@@ -5,183 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Home Page</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        /* Navbar Styling */
-        /* Navbar Styling */
-        .navbar {
-            background-color: #2c3e50;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        /* Logo Styling */
-        .navbar-logo a {
-            color: #ecf0f1;
-            font-size: 20px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        /* Navbar Items Styling */
-        .navbar-items {
-            display: flex;
-            align-items: center;
-            flex-grow: 1;
-            justify-content: center;
-        }
-
-        .navbar-items a {
-            color: #ecf0f1;
-            padding: 10px 15px;
-            text-decoration: none;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            margin: 0 10px;
-        }
-
-        .navbar-items a:hover {
-            background-color: #34495e;
-            border-radius: 5px;
-        }
-
-        /* Search Bar Styling */
-        .navbar-search input {
-            padding: 8px 15px;
-            border-radius: 5px;
-            border: none;
-            font-size: 16px;
-        }
-
-
-
-        /* Hero Section */
-        .hero {
-            background-color: #2980b9;
-            color: #ecf0f1;
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-
-        .hero button {
-            padding: 10px 20px;
-            font-size: 18px;
-            color: #2980b9;
-            background-color: #ecf0f1;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .hero button:hover {
-            background-color: #bdc3c7;
-            transform: scale(1.05);
-        }
-
-        /* Cards Container */
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 40px 20px;
-        }
-
-        /* Card Styling */
-        .card {
-            background-color: #ffffff;
-            margin: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #2980b9;
-        }
-
-        .card-subtitle {
-            font-size: 18px;
-            color: #7f8c8d;
-            margin-bottom: 15px;
-        }
-
-        .card-description {
-            font-size: 16px;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-
-        .read-more {
-            color: #2980b9;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        .read-more:hover {
-            color: #1f6395;
-        }
-
-        /* Footer Styling */
-        .footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .footer p {
-            margin: 0;
-            font-size: 14px;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/blog.css">
 </head>
 
 <body>
 
-    <div class="navbar">
-        <div class="navbar-logo">
-            <a href="#home">Your Logo</a>
-        </div>
-        <div class="navbar-items">
-            <a href="/api/createPage">Add Blog</a>
-        </div>
-        <div class="navbar-search">
-            <input type="text" placeholder="Search...">
-        </div>
-    </div>
-
+    <%- include("components/navbar") %>
 
     <!-- Hero Section -->
     <div class="hero">
@@ -193,6 +22,10 @@
     <!-- Cards Container -->
     <div class="card-container">
         <!-- Loop through each blog and create a card -->
+         <% if(blogs.length == 0 ){ %>
+            <h1>No Blogs Found</h1>
+         <% } %>
+
         <% blogs.forEach((blog)=> { %>
             <div class="card">
                 <div class="card-title">
@@ -209,11 +42,8 @@
             <% }) %>
     </div>
 
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
-    </div>
+    
+    <%- include("components/footer.ejs") %>
 
 </body>
 
