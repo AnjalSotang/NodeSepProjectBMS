@@ -8,8 +8,7 @@ const config = dbConfig[env];
 // Initialize Sequelize instance
 const sequelize = new Sequelize(config.database, config.username, config.password, {
     host: config.host,
-    dialect: config.dialect,
-    port: 3306
+    dialect: config.dialect
   });
 
 
