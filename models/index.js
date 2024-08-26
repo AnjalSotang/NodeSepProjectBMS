@@ -2,7 +2,7 @@ const { Sequelize } = require('sequelize');
 const dbConfig = require('../config/dbConfig');
 
 // Determine environment (default to development)
-const env = process.env.NODE_ENV || 'production';
+const env = process.env.NODE_ENV || 'development';
 const config = dbConfig[env];
 
 // Initialize Sequelize instance
