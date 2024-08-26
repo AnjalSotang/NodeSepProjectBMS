@@ -8,7 +8,7 @@ sequelize.sync({ force: 0 });
 app.set('view engine', 'ejs');
 
 //nODEJS KAI CSS ALLOW GAR
-// Serve static files from the 'public' directory
+// Serve static files from the 'public' directory make the file public it opens security
 app.use(express.static("public"));
 
 
